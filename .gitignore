@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V7
+.Trashes
+
+# PDF source (large binary, guidelines)
+*.pdf
+
+# Node (http-server)
+node_modules/

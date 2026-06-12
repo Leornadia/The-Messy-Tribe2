@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Messy Tribe — A safe space for moms and their children</title>
+<meta name="description" content="A safe space for moms and their children to connect, slow down, and grow together through creative, grounding, and heart-centered weekly experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terracotta:#C1654A;
+    --terracotta-deep:#A9522F;
+    --sage:#7A9E7E;
+    --cream:#F5EFE6;
+    --forest:#3D5A42;
+    --warm-brown:#8B5E3C;
+    --warm-grey:#F0EBE3;
+    --light-sage:#D4E8D5;
+    --deep-earth:#5C3D2E;
+    --mist-blush:#E6D3CF;
+    --soft-peach:#F2D6C2;
+    --washed-sage:#E3ECE7;
+    --off-white:#F8F6F2;
+    --body-text:#2C2C2C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Lato',sans-serif;
+    font-size:17px; /* keeps body well above 14pt minimum */
+    line-height:1.7;
+    color:var(--body-text);
+    background:var(--cream);
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--forest);font-weight:500;line-height:1.25;}
+  .hand{font-family:'Sacramento',cursive;color:var(--terracotta);font-size:1.9rem;display:block;margin-bottom:.4rem;}
+  p{max-width:62ch;}
+  img{max-width:100%;display:block;}
+  a{color:var(--terracotta);text-decoration:none;}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- header ---------- */
+  header{
+    background:var(--cream);
+    position:sticky;top:0;z-index:20;
+    border-bottom:1px solid var(--warm-grey);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .brand{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--forest);letter-spacing:.02em;}
+  .brand span{font-family:'Sacramento',cursive;color:var(--terracotta);font-size:1.5rem;margin-right:.15em;}
+  nav ul{display:flex;gap:28px;list-style:none;}
+  nav a{color:var(--forest);font-size:.95rem;letter-spacing:.04em;}
+  nav a:hover{color:var(--terracotta);}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-block;
+    background:var(--terracotta);
+    color:var(--off-white);
+    padding:14px 32px;
+    border-radius:999px;
+    font-family:'Lato',sans-serif;
+    font-weight:700;
+    letter-spacing:.05em;
+    font-size:.95rem;
+    border:none;cursor:pointer;
+    transition:background .25s ease;
+  }
+  .btn:hover{background:var(--terracotta-deep);}
+  .btn.ghost{background:transparent;color:var(--forest);border:2px solid var(--sage);}
+  .btn.ghost:hover{background:var(--light-sage);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:90px 0 70px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:0 0 22px;}
+  .hero p.lead{font-size:1.15rem;margin-bottom:34px;color:var(--deep-earth);}
+  .hero-photo{position:relative;}
+  .hero-photo img{
+    border-radius:46% 54% 52% 48% / 48% 46% 54% 52%;
+    aspect-ratio:1/1;object-fit:cover;
+    box-shadow:0 18px 50px rgba(92,61,46,.18);
+  }
+  .hero-photo::after{
+    content:"";position:absolute;inset:-26px;z-index:-1;
+    background:url('assets/page_6_img_1_X6.png') center/contain no-repeat;
+    opacity:.55;
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:84px 0;}
+  .eyebrow{font-family:'Sacramento',cursive;color:var(--terracotta);font-size:1.8rem;}
+  .section-title{font-size:clamp(1.7rem,3vw,2.4rem);margin:.2rem 0 1.2rem;}
+  .center{text-align:center;}
+  .center p{margin-left:auto;margin-right:auto;}
+
+  /* values */
+  .values{background:var(--warm-grey);}
+  .value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;margin-top:48px;}
+  .value-card{
+    background:var(--off-white);
+    border-radius:22px;
+    padding:30px 24px;
+    text-align:center;
+    border:1px solid var(--washed-sage);
+  }
+  .value-card h3{font-size:1.25rem;margin-bottom:.6rem;}
+  .value-card p{font-size:.93rem;color:var(--body-text);}
+  .value-card .dot{
+    width:14px;height:14px;border-radius:50%;
+    margin:0 auto 16px;
+  }
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;}
+  .about-photo img{
+    border-radius:24px;
+    box-shadow:0 18px 50px rgba(92,61,46,.16);
+  }
+  .archetypes{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;}
+  .chip{
+    background:var(--light-sage);
+    color:var(--forest);
+    padding:8px 18px;border-radius:999px;
+    font-size:.88rem;font-weight:700;letter-spacing:.04em;
+  }
+  .chip.blush{background:var(--mist-blush);color:var(--deep-earth);}
+  .chip.peach{background:var(--soft-peach);color:var(--deep-earth);}
+
+  /* experiences */
+  .experiences{background:var(--washed-sage);}
+  .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:48px;}
+  .exp-card{
+    background:var(--off-white);
+    border-radius:22px;overflow:hidden;
+    display:flex;flex-direction:column;
+    border:1px solid var(--warm-grey);
+  }
+  .exp-card .swatch{height:10px;}
+  .exp-card .inner{padding:28px 26px 30px;display:flex;flex-direction:column;gap:12px;flex:1;}
+  .exp-card h3{font-size:1.2rem;}
+  .exp-card p{font-size:.93rem;flex:1;}
+  .exp-card a{font-weight:700;font-size:.9rem;letter-spacing:.05em;}
+
+  /* quote */
+  .quote{background:var(--soft-peach);text-align:center;}
+  .quote blockquote{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:clamp(1.4rem,2.8vw,2rem);
+    color:var(--deep-earth);
+    max-width:24ch;margin:0 auto 18px;
+  }
+  .quote cite{font-style:normal;font-size:.95rem;color:var(--warm-brown);letter-spacing:.05em;}
+
+  /* journal */
+  .journal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:48px;}
+  .post{
+    background:var(--off-white);
+    border-radius:22px;padding:30px 26px;
+    border:1px solid var(--warm-grey);
+  }
+  .post .tag{font-family:'Sacramento',cursive;color:var(--sage);font-size:1.4rem;}
+  .post h3{font-size:1.15rem;margin:.3rem 0 .7rem;}
+  .post p{font-size:.92rem;}
+
+  /* join */
+  .join{background:var(--warm-grey);}
+  .join-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  form{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
+  label{font-size:.85rem;font-weight:700;letter-spacing:.05em;color:var(--forest);}
+  input,textarea{
+    font-family:'Lato',sans-serif;font-size:1rem;
+    padding:13px 16px;
+    border:1px solid var(--light-sage);
+    border-radius:14px;
+    background:var(--off-white);
+    color:var(--body-text);
+  }
+  input:focus,textarea:focus{outline:2px solid var(--sage);border-color:var(--sage);}
+  .newsletter{
+    background:var(--light-sage);
+    border-radius:22px;padding:34px 30px;
+  }
+  .newsletter h3{margin-bottom:.6rem;}
+  .newsletter form{flex-direction:row;flex-wrap:wrap;}
+  .newsletter input{flex:1;min-width:200px;}
+
+  /* footer */
+  footer{
+    background:var(--forest);
+    color:var(--cream);
+    padding:60px 0 40px;
+  }
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
+  footer .hand{color:var(--soft-peach);font-size:2rem;}
+  footer a{color:var(--light-sage);}
+  footer small{display:block;margin-top:26px;opacity:.75;font-size:.8rem;}
+
+  @media (max-width:840px){
+    .hero-grid,.about-grid,.join-grid{grid-template-columns:1fr;gap:40px;}
+    .hero{padding:60px 0 50px;}
+    nav ul{gap:16px;flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span>the</span> Messy Tribe</div>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#join">Join us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hand">welcome, mama</span>
+        <h1>Motherhood doesn't have to be perfect to be beautiful.</h1>
+        <p class="lead">The Messy Tribe is a safe space for moms and their children to connect, slow down, and grow together — through creative, grounding, heart-centered weekly experiences.</p>
+        <a class="btn" href="#join">Join the tribe</a>
+        &nbsp;&nbsp;
+        <a class="btn ghost" href="#experiences">See what we do</a>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/mother_child_nature_play.png" alt="A mother and her young daughter planting a seedling together in the forest, hands in the soil, warm golden light">
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values" id="values">
+    <div class="wrap center">
+      <span class="eyebrow">what we hold close</span>
+      <h2 class="section-title">Five things we believe with our whole hearts</h2>
+      <p>These aren't rules. They're the soft ground this tribe is built on.</p>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="dot" style="background:var(--terracotta)"></div>
+          <h3>Connection</h3>
+          <p>The bond between a mother and her child is sacred. Everything we create deepens it — to each other, to nature, to this very moment.</p>
+        </div>
+        <div class="value-card">
+          <div class="dot" style="background:var(--sage)"></div>
+          <h3>Authenticity</h3>
+          <p>We celebrate real life: the mess, the tears, the laughter, and the in-between. We never pretend perfection.</p>
+        </div>
+        <div class="value-card">
+          <div class="dot" style="background:var(--warm-brown)"></div>
+          <h3>Growth</h3>
+          <p>Emotionally, creatively, spiritually — we hold space for both mother and child to evolve together.</p>
+        </div>
+        <div class="value-card">
+          <div class="dot" style="background:var(--forest)"></div>
+          <h3>Slowness</h3>
+          <p>In a culture of rush, we choose presence. Breathe. Notice. Experience life with intention.</p>
+        </div>
+        <div class="value-card">
+          <div class="dot" style="background:var(--deep-earth)"></div>
+          <h3>Courage</h3>
+          <p>Showing up vulnerably takes courage. We honour it in every mother who joins this tribe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="assets/messy_craft_painting.png" alt="Children's paint-covered hands making watercolour art on a wooden table scattered with ferns, daisies and wildflowers">
+      </div>
+      <div>
+        <span class="eyebrow">the heart behind it</span>
+        <h2 class="section-title">Hi, I'm Carissa.</h2>
+        <p>If The Messy Tribe were a person, she'd be the kind of mother who invites you in for tea without apologising for the crayon marks on the table. Warm, wise, a little wild, deeply grounded — and entirely herself.</p>
+        <p style="margin-top:1rem">That's the space I wanted to build. Not another place telling you to do more, be more, hustle harder. A tribe where the mess is welcome, where small steps matter deeply, and where you and your little ones get to slow down and make something together.</p>
+        <div class="archetypes" aria-label="Brand archetypes">
+          <span class="chip">The Caregiver</span>
+          <span class="chip blush">The Creator</span>
+          <span class="chip peach">The Explorer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="experiences" id="experiences">
+    <div class="wrap center">
+      <span class="eyebrow">come make with us</span>
+      <h2 class="section-title">Weekly experiences for you and your littles</h2>
+      <p>Gentle, hands-on gatherings — no pressure, no perfect. Just presence, paint, and a bit of dirt under the fingernails.</p>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <div class="swatch" style="background:var(--terracotta)"></div>
+          <div class="inner">
+            <h3>Messy art mornings</h3>
+            <p>Watercolours, finger paint, and wildflowers on the table. We make things — and yes, there will be glitter.</p>
+            <a href="#join">Save your spot →</a>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="swatch" style="background:var(--sage)"></div>
+          <div class="inner">
+            <h3>Nature connection walks</h3>
+            <p>Slow wanders through the woods, hands in the soil, treasures in pockets. Magic in the everyday.</p>
+            <a href="#join">Save your spot →</a>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="swatch" style="background:var(--warm-brown)"></div>
+          <div class="inner">
+            <h3>Slow craft afternoons</h3>
+            <p>Simple, seasonal making with natural textures — leaves, fabric, clay. The doing matters more than the done.</p>
+            <a href="#join">Save your spot →</a>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="swatch" style="background:var(--deep-earth)"></div>
+          <div class="inner">
+            <h3>Mother circles</h3>
+            <p>A held, honest space just for you, mama. Tea, breath, and conversation that lets you be exactly where you are.</p>
+            <a href="#join">Save your spot →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote" aria-label="A word from the tribe">
+    <div class="wrap">
+      <blockquote>"Some days it's hard. That's okay. You are doing so well, mama."</blockquote>
+      <cite>— the whole tribe, gently, in your corner</cite>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal">
+    <div class="wrap center">
+      <span class="eyebrow">honest words</span>
+      <h2 class="section-title">From the journal</h2>
+      <p>Real stories about real motherhood — the mess, the tears, the laughter, and the in-between.</p>
+      <div class="journal-grid">
+        <article class="post">
+          <span class="tag">slow living</span>
+          <h3>Let's take a breath together</h3>
+          <p>What happened when we stopped filling every afternoon — and started sitting in the garden instead.</p>
+          <a href="#join">Read soon →</a>
+        </article>
+        <article class="post">
+          <span class="tag">creative play</span>
+          <h3>The paint went everywhere. Good.</h3>
+          <p>Why the mess on the table is the whole point, and what messy hands teach little hearts.</p>
+          <a href="#join">Read soon →</a>
+        </article>
+        <article class="post">
+          <span class="tag">growth</span>
+          <h3>Every small step matters deeply</h3>
+          <p>On showing up imperfectly, building something new, and the quiet courage of mothers.</p>
+          <a href="#join">Read soon →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="join" id="join">
+    <div class="wrap join-grid">
+      <div>
+        <span class="eyebrow">there's a seat for you</span>
+        <h2 class="section-title">Join the tribe</h2>
+        <p>Come exactly as you are — crayon marks, tired eyes and all. Tell us a little about you and your littles, and we'll be in touch with the next gathering.</p>
+        <form>
+          <label for="name">Your name</label>
+          <input id="name" type="text" name="name" placeholder="Hi, I'm…" autocomplete="name">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@somewhere.com" autocomplete="email">
+          <label for="message">A little about you</label>
+          <textarea id="message" name="message" rows="4" placeholder="My littles are… and we'd love to…"></textarea>
+          <button class="btn" type="submit">Send with love</button>
+        </form>
+      </div>
+      <div>
+        <div class="newsletter">
+          <span class="hand">letters for the messy days</span>
+          <h3>A gentle note, most weeks</h3>
+          <p>Slow ideas, honest words, and what's coming up for the tribe. No noise, no hustle — unsubscribe any time.</p>
+          <form>
+            <input type="email" aria-label="Email for newsletter" placeholder="you@somewhere.com">
+            <button class="btn" type="submit">Sign me up</button>
+          </form>
+        </div>
+        <p style="margin-top:26px;font-size:.95rem">Or come say hi on Instagram — <a href="https://instagram.com" rel="noopener">@themessytribe</a>. We're the ones with paint on our hands.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <span class="hand">real beats perfect, every time</span>
+      <div class="brand" style="color:var(--cream)">The Messy Tribe</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#about">About</a> &nbsp;·&nbsp;
+      <a href="#experiences">Experiences</a> &nbsp;·&nbsp;
+      <a href="#journal">Journal</a> &nbsp;·&nbsp;
+      <a href="#join">Join us</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <small>© 2026 The Messy Tribe. Made slowly, with love (and a little glitter).</small>
+  </div>
+</footer>
+
+</body>
+</html>
